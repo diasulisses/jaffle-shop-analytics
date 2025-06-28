@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: jaffle_shop 
+    database: dbt-certification-study 
+    schema: jaffle_shop
+
+    tables:
+      - name: raw_customers
+      - name: raw_orders
+      - name: raw_payments
