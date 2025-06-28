@@ -1,0 +1,11 @@
+# Python Virtual Environment
+venv/
+
+# dbt artifacts
+logs/
+target/
+dbt_packages/
+
+# IDE / OS specific files
+.DS_Store
+*.pyc
