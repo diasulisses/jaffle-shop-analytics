@@ -2,12 +2,21 @@ version: 2
 
 sources:
   - name: main
+    description: Clone of a PostGres database.
     database: dbt-certification-study 
     schema: jaffle_shop
 
     tables:
       - name: raw_customers
+        description: Raw customer data.
+        columns:
+          - name: id
+            description: Unique customer id.
       - name: raw_orders
+        description: Raw order data.
+        columns:
+          - name: id
+            description: Unique order id.
       - name: raw_items
       - name: raw_products
       - name: raw_supplies
