@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: stripe
+    database: dbt-certification-study 
+    schema: raw_stripe
+    tables:
+      - name: payments
