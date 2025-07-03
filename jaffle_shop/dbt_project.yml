@@ -18,6 +18,11 @@ seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
+# This new block tells dbt how to handle seeds for the 'jaffle_shop' project.
+seeds:
+  jaffle_shop:
+    +schema: raw # This line specifies the 'raw' schema for all seeds.
+
 clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
