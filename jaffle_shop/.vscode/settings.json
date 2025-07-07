@@ -1,3 +1,7 @@
 {
-    "dbt.enableNewLineagePanel": false
+    "dbt.enableNewLineagePanel": false,
+    "python.defaultInterpreter": "c:\\Users\\DeSouU\\repo\\jaffle-shop-analytics\\venv\\Scripts\\python.exe",
+    "python.pythonPath": "c:\\Users\\DeSouU\\repo\\jaffle-shop-analytics\\venv\\Scripts\\python.exe",
+    "dbt.dbtPath": "c:\\Users\\DeSouU\\repo\\jaffle-shop-analytics\\venv\\Scripts\\dbt.exe",
+    "dbt.pythonPath": "c:\\Users\\DeSouU\\repo\\jaffle-shop-analytics\\venv\\Scripts\\python.exe"
 }
