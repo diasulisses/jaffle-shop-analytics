@@ -1,3 +1,11 @@
+{{
+    config(
+        materialized='incremental',
+        incremental_strategy = 'merge',
+        unique_key = 'order_id'
+    )
+}}
+
 {%- set payment_methods = ['bank_transfer', 'credit_card', 'coupon', 'gift_card'] -%}
 
 with payments as (
