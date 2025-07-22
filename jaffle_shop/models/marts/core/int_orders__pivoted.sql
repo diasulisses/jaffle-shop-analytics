@@ -1,8 +1,15 @@
 {{
     config(
         materialized='incremental',
-        incremental_strategy = 'merge',
-        unique_key = 'order_id'
+        incremental_strategy = 'insert_overwrite',
+        unique_key= 'order_id',
+        partition_by= {
+
+            'field': 'payment_created_at',
+            'data_type': 'date',
+            'granularity': 'day'
+
+        }
     )
 }}
 
@@ -15,6 +22,7 @@ with payments as (
 pivoted as (
     select
         order_id,
+        payment_created_at,
         {% for payment_method in payment_methods -%}
         sum(case when payment_method = '{{ payment_method }}' then payment_amount else 0 end) as {{ payment_method }}_amount
         {%- if not loop.last -%}
@@ -23,7 +31,7 @@ pivoted as (
         {% endfor -%}
     from payments
     where payment_status = 'success'
-    group by 1
+    group by order_id, payment_created_at
 )
 
 select * from pivoted
